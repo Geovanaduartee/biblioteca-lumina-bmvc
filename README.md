@@ -1,10 +1,69 @@
-# Bmvc
+# 📚 Biblioteca Lumina
 
-## Trabalhando com o BMVC no BASH:
+Sistema web de biblioteca desenvolvido em Python utilizando o framework Bottle e a arquitetura BMVC (Bottle Model View Controller).
 
-1. Executar o arquivo 'route.py', na raiz do projeto.
+---
 
-## Trabalhando com o BMVC no DOCKER:
+# Nível 1
 
-1. $ docker build -t bmvci .
-1. $ docker run -d -p 8080:8080 -v $(pwd):/app bmvci
+Este é o primeiro nível do projeto.
+
+O objetivo foi desenvolver uma aplicação web personalizada utilizando BMVC, HTML, CSS e JavaScript.
+
+## Funcionalidades
+
+- Página Inicial
+- Página Sobre
+- Página Acervo
+- Página Contato
+- Pesquisa de livros
+- Filtro por categoria
+- Formulário de contato
+- Menu responsivo
+- Logo personalizado
+- Favicon
+- Layout responsivo
+
+---
+
+## Tecnologias
+
+- Python
+- Bottle
+- BMVC
+- HTML5
+- CSS3
+- JavaScript
+- Bootstrap 5
+
+---
+
+## Como executar
+
+Instale o Bottle:
+
+```bash
+python -m pip install bottle
+```
+
+Execute:
+
+```bash
+python route.py
+```
+
+Depois acesse:
+
+```
+http://localhost:8080
+```
+
+---
+
+## Status do projeto
+
+✅ Nível 1 concluído.
+
+---
+
+Projeto acadêmico desenvolvido para a Macro Tarefa BMVC.
