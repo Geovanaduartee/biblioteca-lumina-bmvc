@@ -92,10 +92,4 @@ Neste nível foi desenvolvido um site institucional da Biblioteca Lumina, conten
 
 ---
 
-## Status
-
-✅ Nível 1 concluído.
-
----
-
 Projeto desenvolvido para a disciplina utilizando Python, Bottle e arquitetura BMVC.
