@@ -185,10 +185,4 @@ Somente usuários autenticados podem acessar o gerenciamento do acervo, garantin
 
 ---
 
-## Status
-
-✅ Nível 3 concluído.
-
----
-
 Projeto desenvolvido para a disciplina utilizando Python, Bottle e arquitetura BMVC.
