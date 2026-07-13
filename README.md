@@ -13,20 +13,23 @@ O projeto foi desenvolvido de forma progressiva em quatro níveis:
 - Nível 3: controle de acesso com login e páginas restritas
 - Nível 4: comunicação em tempo real com WebSocket
 
-## Funcionalidades do Nível 1
+## Funcionalidades do Nível 4
 
-- Página inicial
-- Página sobre a biblioteca
-- Página de acervo
-- Página de contato
-- Pesquisa por título ou autor
-- Filtro por categoria
-- Formulário com confirmação em JavaScript
-- Menu responsivo
-- Logo personalizado
-- Favicon
-- Layout responsivo
-- CSS e JavaScript próprios
+- Todas as funcionalidades dos níveis anteriores
+- CRUD completo de livros
+- Login e logout
+- Controle de acesso
+- Página restrita
+- Comunicação em tempo real
+- Envio de avisos com Socket.IO
+- Atualização simultânea em múltiplas abas
+- Servidor com Eventlet
+
+## Tecnologias adicionais
+
+- Python Socket.IO
+- Eventlet
+- WebSocket
 
 ## Tecnologias utilizadas
 
@@ -80,9 +83,9 @@ http://localhost:8080
 - `nivel-3`: será utilizada para login e controle de acesso
 - `nivel-4`: será utilizada para WebSocket
 
-## Autora
+## Desenvolvedoras
 
-Geovana Duarte
+Geovana Duarte e Giovanna Santos
 
 ## Projeto acadêmico
 
