@@ -1,35 +1,114 @@
 # 📚 Biblioteca Lumina
 
-Sistema web de biblioteca desenvolvido em Python com o framework Bottle e a arquitetura BMVC.
+Sistema web de biblioteca desenvolvido em Python utilizando o framework Bottle e a arquitetura BMVC (Bottle Model View Controller).
 
-## Sobre o projeto
+---
 
-A Biblioteca Lumina é uma aplicação web criada para apresentar e gerenciar o acervo de uma biblioteca.
+# Nível 4 – Comunicação em Tempo Real com WebSocket
 
-O projeto foi desenvolvido de forma progressiva em quatro níveis:
+Este projeto foi desenvolvido para a Macro Tarefa BMVC.
 
-- Nível 1: páginas web estáticas e personalizadas
-- Nível 2: CRUD completo com modelos Python
-- Nível 3: controle de acesso com login e páginas restritas
-- Nível 4: comunicação em tempo real com WebSocket
+Neste nível foram mantidas todas as funcionalidades dos níveis anteriores e foi implementada a comunicação em tempo real utilizando WebSocket com Socket.IO e Eventlet.
 
-## Funcionalidades do Nível 4
+---
 
-- Todas as funcionalidades dos níveis anteriores
-- CRUD completo de livros
-- Login e logout
+## Funcionalidades
+
+### Funcionalidades dos níveis anteriores
+
+- Página Inicial
+- Página Sobre
+- Página Acervo
+- Página Contato
+- Pesquisa de livros
+- Filtro por categoria
+- Formulário de contato
+- Menu responsivo
+- Interface personalizada
+- Cadastro de livros
+- Listagem de livros
+- Edição de livros
+- Exclusão de livros
+- Persistência de dados em arquivo JSON
+- Login
+- Logout
 - Controle de acesso
-- Página restrita
-- Comunicação em tempo real
-- Envio de avisos com Socket.IO
-- Atualização simultânea em múltiplas abas
-- Servidor com Eventlet
+- Área administrativa protegida
 
-## Tecnologias adicionais
+### Funcionalidades adicionadas no Nível 4
 
-- Python Socket.IO
-- Eventlet
-- WebSocket
+- Comunicação em tempo real utilizando WebSocket
+- Envio de avisos em tempo real
+- Atualização simultânea em múltiplas abas do navegador
+- Página exclusiva para demonstração da comunicação em tempo real
+- Integração entre Bottle e Socket.IO
+- Servidor utilizando Eventlet
+
+---
+
+## Dados de acesso
+
+Usuário:
+
+```text
+admin
+```
+
+Senha:
+
+```text
+123
+```
+
+---
+
+## CRUD implementado
+
+### Create
+
+Cadastro de novos livros.
+
+### Read
+
+Visualização da lista de livros cadastrados.
+
+### Update
+
+Edição das informações dos livros.
+
+### Delete
+
+Exclusão de livros do acervo.
+
+---
+
+## Comunicação em tempo real
+
+O sistema possui uma página destinada ao envio de avisos em tempo real.
+
+Quando um aviso é enviado por um usuário autenticado, todas as páginas conectadas recebem imediatamente a nova mensagem, sem necessidade de atualizar o navegador.
+
+Esta funcionalidade foi implementada utilizando WebSocket através das bibliotecas Socket.IO e Eventlet.
+
+---
+
+## Modelo utilizado
+
+Modelo principal:
+
+- Livro
+
+Campos do modelo:
+
+- ID
+- Título
+- Autor
+- Categoria
+- Ano
+- ISBN
+- Disponibilidade
+
+---
 
 ## Tecnologias utilizadas
 
@@ -40,27 +119,51 @@ O projeto foi desenvolvido de forma progressiva em quatro níveis:
 - CSS3
 - JavaScript
 - Bootstrap 5
+- JSON
+- Socket.IO
+- Eventlet
+- WebSocket
+
+---
 
 ## Estrutura do projeto
 
 ```text
 app/
 ├── controllers/
+│   ├── application.py
+│   ├── livro_controller.py
+│   └── login_controller.py
+│
 ├── models/
+│   ├── livro.py
+│   └── livro_repository.py
+│
+├── data/
+│   └── livros.json
+│
 ├── static/
 │   ├── css/
 │   ├── img/
 │   └── js/
+│       ├── script.js
+│       └── tempo_real.js
+│
 └── views/
     └── html/
+        ├── login.tpl
+        ├── admin_livros.tpl
+        └── tempo_real.tpl
 ```
+
+---
 
 ## Como executar
 
-Na raiz do projeto, instale o Bottle:
+Instale as dependências:
 
 ```bash
-python -m pip install bottle
+python -m pip install bottle python-socketio eventlet
 ```
 
 Execute o servidor:
@@ -69,24 +172,62 @@ Execute o servidor:
 python route.py
 ```
 
-Depois, acesse:
+Depois acesse:
 
 ```text
 http://localhost:8080
 ```
 
-## Branches
+Página de login:
 
-- `main`: versão principal
-- `nivel-1`: versão final do Nível 1
-- `nivel-2`: desenvolvimento do CRUD
-- `nivel-3`: será utilizada para login e controle de acesso
-- `nivel-4`: será utilizada para WebSocket
+```text
+http://localhost:8080/login
+```
+
+Área administrativa:
+
+```text
+http://localhost:8080/admin/livros
+```
+
+Página de comunicação em tempo real:
+
+```text
+http://localhost:8080/tempo-real
+```
+
+---
+
+## Como testar a comunicação em tempo real
+
+1. Faça login utilizando as credenciais de demonstração.
+2. Abra a página **Avisos em Tempo Real**.
+3. Abra essa mesma página em duas abas do navegador.
+4. Digite um aviso em uma das abas.
+5. Clique em **Enviar**.
+6. A mensagem aparecerá imediatamente nas duas abas, demonstrando a comunicação em tempo real utilizando WebSocket.
+
+---
+
+## Objetivo do Nível 4
+
+Neste nível foi implementada uma funcionalidade de comunicação em tempo real utilizando WebSocket.
+
+O sistema permite que avisos enviados por um usuário autenticado sejam recebidos instantaneamente por todos os clientes conectados, sem necessidade de recarregar a página.
+
+---
 
 ## Desenvolvedoras
 
-Geovana Duarte e Giovanna Santos
+- Geovana Duarte
+- Giovanna Santos
 
-## Projeto acadêmico
+---
 
-Projeto desenvolvido para a Macro Tarefa BMVC.
+## Status
+
+✅ Nível 4 concluído.
+
+---
+
+Projeto desenvolvido para a disciplina utilizando Python, Bottle e arquitetura BMVC.
