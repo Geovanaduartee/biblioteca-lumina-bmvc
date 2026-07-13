@@ -129,10 +129,4 @@ http://localhost:8080
 
 ---
 
-# Status do projeto
-
-✅ Projeto concluído.
-
----
-
 Projeto desenvolvido para a disciplina de Programação Orientada a Objetos utilizando Python, Bottle e arquitetura BMVC.
