@@ -224,10 +224,4 @@ O sistema permite que avisos enviados por um usuário autenticado sejam recebido
 
 ---
 
-## Status
-
-✅ Nível 4 concluído.
-
----
-
 Projeto desenvolvido para a disciplina utilizando Python, Bottle e arquitetura BMVC.
