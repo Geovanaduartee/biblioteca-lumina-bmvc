@@ -13,20 +13,26 @@ O projeto foi desenvolvido de forma progressiva em quatro níveis:
 - Nível 3: controle de acesso com login e páginas restritas
 - Nível 4: comunicação em tempo real com WebSocket
 
-## Funcionalidades do Nível 1
+## Funcionalidades do Nível 3
 
-- Página inicial
-- Página sobre a biblioteca
-- Página de acervo
-- Página de contato
-- Pesquisa por título ou autor
-- Filtro por categoria
-- Formulário com confirmação em JavaScript
-- Menu responsivo
-- Logo personalizado
-- Favicon
-- Layout responsivo
-- CSS e JavaScript próprios
+- Todas as funcionalidades do Nível 1
+- CRUD completo de livros
+- Cadastro de livros
+- Listagem de livros
+- Edição de livros
+- Exclusão de livros
+- Persistência em arquivo JSON
+- Tela de login
+- Validação de usuário e senha
+- Controle de acesso
+- Área administrativa restrita
+- Logout
+
+## Dados de acesso
+
+- Usuário: `admin`
+- Senha: `123`
+
 
 ## Tecnologias utilizadas
 
@@ -80,9 +86,9 @@ http://localhost:8080
 - `nivel-3`: será utilizada para login e controle de acesso
 - `nivel-4`: será utilizada para WebSocket
 
-## Autora
+## Desenvolvedoras
 
-Geovana Duarte
+Geovana Duarte e Giovanna Santos
 
 ## Projeto acadêmico
 
