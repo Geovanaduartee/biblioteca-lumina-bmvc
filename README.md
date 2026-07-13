@@ -4,11 +4,13 @@ Sistema web de biblioteca desenvolvido em Python utilizando o framework Bottle e
 
 ---
 
-## Nível 1 — Página web estática
+# Nível 1 – Página Web Estática
 
-Este é o primeiro nível do projeto.
+Este projeto foi desenvolvido para a Macro Tarefa BMVC.
 
-O objetivo foi desenvolver uma aplicação web personalizada utilizando BMVC, HTML, CSS e JavaScript.
+O objetivo deste nível foi criar uma aplicação web personalizada utilizando a arquitetura BMVC, com páginas próprias, layout responsivo e funcionalidades implementadas com HTML, CSS e JavaScript.
+
+---
 
 ## Funcionalidades
 
@@ -20,13 +22,14 @@ O objetivo foi desenvolver uma aplicação web personalizada utilizando BMVC, HT
 - Filtro por categoria
 - Formulário de contato
 - Menu responsivo
-- Logo personalizado
-- Favicon
+- Logo personalizada
+- Favicon personalizado
 - Layout responsivo
+- Interface personalizada
 
 ---
 
-## Tecnologias
+## Tecnologias utilizadas
 
 - Python
 - Bottle
@@ -38,6 +41,22 @@ O objetivo foi desenvolver uma aplicação web personalizada utilizando BMVC, HT
 
 ---
 
+## Estrutura do projeto
+
+```
+app/
+├── controllers/
+├── models/
+├── static/
+│   ├── css/
+│   ├── img/
+│   └── js/
+└── views/
+    └── html/
+```
+
+---
+
 ## Como executar
 
 Instale o Bottle:
@@ -46,7 +65,7 @@ Instale o Bottle:
 python -m pip install bottle
 ```
 
-Execute:
+Execute o servidor:
 
 ```bash
 python route.py
@@ -60,6 +79,12 @@ http://localhost:8080
 
 ---
 
+## Objetivo do Nível 1
+
+Neste nível foi desenvolvido um site institucional da Biblioteca Lumina, contendo páginas estáticas, layout personalizado, navegação entre páginas, JavaScript para interação do usuário e aplicação da arquitetura BMVC.
+
+---
+
 ## Desenvolvedoras
 
 - Geovana Duarte
@@ -67,4 +92,10 @@ http://localhost:8080
 
 ---
 
-Projeto acadêmico desenvolvido para a Macro Tarefa BMVC.
+## Status
+
+✅ Nível 1 concluído.
+
+---
+
+Projeto desenvolvido para a disciplina utilizando Python, Bottle e arquitetura BMVC.
