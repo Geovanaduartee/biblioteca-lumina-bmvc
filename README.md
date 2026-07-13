@@ -4,7 +4,7 @@ Sistema web de biblioteca desenvolvido em Python utilizando o framework Bottle e
 
 ---
 
-# Nível 1
+## Nível 1 — Página web estática
 
 Este é o primeiro nível do projeto.
 
@@ -60,9 +60,10 @@ http://localhost:8080
 
 ---
 
-## Status do projeto
+## Desenvolvedoras
 
-✅ Nível 1 concluído.
+- Geovana Duarte
+- Giovanna Santos
 
 ---
 
