@@ -159,10 +159,4 @@ A aplicação permite cadastrar, listar, editar e excluir livros, utilizando a a
 
 ---
 
-## Status
-
-✅ Nível 2 concluído.
-
----
-
 Projeto desenvolvido para a disciplina utilizando Python, Bottle e arquitetura BMVC.
