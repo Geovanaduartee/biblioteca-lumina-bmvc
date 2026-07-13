@@ -76,6 +76,12 @@
                             </a>
                         </li>
 
+                        <li class="nav-item">
+                            <a class="nav-link" href="/logout">
+                                 Sair
+                             </a>
+                        </li>    
+
                     </ul>
                 </div>
 

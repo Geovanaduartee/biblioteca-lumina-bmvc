@@ -2,12 +2,14 @@ from bottle import Bottle, run, static_file
 
 from app.controllers.application import Application
 from app.controllers.livro_controller import LivroController
+from app.controllers.login_controller import LoginController
 
 
 app = Bottle()
 
 ctl = Application()
 livro_ctl = LivroController()
+login_ctl = LoginController()
 
 
 # ---------------------------------------------------------
@@ -47,6 +49,23 @@ def contato():
 def helper():
     return ctl.render("helper")
 
+# ---------------------------------------------------------
+# Login e logout
+# ---------------------------------------------------------
+
+@app.route("/login", method="GET")
+def exibir_login():
+    return login_ctl.exibir_login()
+
+
+@app.route("/login", method="POST")
+def autenticar():
+    return login_ctl.autenticar()
+
+
+@app.route("/logout", method="GET")
+def logout():
+    return login_ctl.logout()
 
 # ---------------------------------------------------------
 # CRUD de livros — área administrativa
@@ -54,31 +73,37 @@ def helper():
 
 @app.route("/admin/livros", method="GET")
 def listar_livros():
+    login_ctl.exigir_login()
     return livro_ctl.listar()
 
 
 @app.route("/admin/livros/cadastrar", method="GET")
 def exibir_cadastro_livro():
+    login_ctl.exigir_login()
     return livro_ctl.exibir_cadastro()
 
 
 @app.route("/admin/livros/cadastrar", method="POST")
 def cadastrar_livro():
+    login_ctl.exigir_login()
     return livro_ctl.cadastrar()
 
 
 @app.route("/admin/livros/<livro_id:int>/editar", method="GET")
 def exibir_edicao_livro(livro_id):
+    login_ctl.exigir_login()
     return livro_ctl.exibir_edicao(livro_id)
 
 
 @app.route("/admin/livros/<livro_id:int>/editar", method="POST")
 def editar_livro(livro_id):
+    login_ctl.exigir_login()
     return livro_ctl.editar(livro_id)
 
 
 @app.route("/admin/livros/<livro_id:int>/excluir", method="POST")
 def excluir_livro(livro_id):
+    login_ctl.exigir_login()
     return livro_ctl.excluir(livro_id)
 
 
