@@ -7,7 +7,8 @@ class Application:
             "home": self.home,
             "sobre": self.sobre,
             "acervo": self.acervo,
-            "contato": self.contato
+            "contato": self.contato,
+            "tempo_real": self.tempo_real
         }
 
     def render(self, page):
@@ -25,6 +26,9 @@ class Application:
 
     def contato(self):
         return template("app/views/html/contato")
+
+    def tempo_real(self):
+        return template("app/views/html/tempo_real")
 
     def helper(self):
         return template("app/views/html/helper")

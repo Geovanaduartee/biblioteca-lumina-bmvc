@@ -1,11 +1,29 @@
-from bottle import Bottle, run, static_file
+import eventlet
+import socketio
+
+from bottle import Bottle, static_file
 
 from app.controllers.application import Application
 from app.controllers.livro_controller import LivroController
 from app.controllers.login_controller import LoginController
 
 
+# ---------------------------------------------------------
+# Aplicações Bottle e Socket.IO
+# ---------------------------------------------------------
+
 app = Bottle()
+
+sio = socketio.Server(
+    async_mode="eventlet",
+    cors_allowed_origins="*"
+)
+
+aplicacao_socket = socketio.WSGIApp(
+    sio,
+    app
+)
+
 
 ctl = Application()
 livro_ctl = LivroController()
@@ -13,7 +31,36 @@ login_ctl = LoginController()
 
 
 # ---------------------------------------------------------
-# Arquivos estáticos: CSS, JavaScript e imagens
+# Eventos Socket.IO
+# ---------------------------------------------------------
+
+@sio.event
+def connect(sid, environ):
+    print(f"Cliente conectado: {sid}")
+
+
+@sio.event
+def disconnect(sid):
+    print(f"Cliente desconectado: {sid}")
+
+
+@sio.on("enviar_aviso")
+def receber_aviso(sid, dados):
+    mensagem = str(dados.get("mensagem", "")).strip()
+
+    if not mensagem:
+        return
+
+    sio.emit(
+        "novo_aviso",
+        {
+            "mensagem": mensagem
+        }
+    )
+
+
+# ---------------------------------------------------------
+# Arquivos estáticos
 # ---------------------------------------------------------
 
 @app.route("/static/<filepath:path>")
@@ -49,6 +96,13 @@ def contato():
 def helper():
     return ctl.render("helper")
 
+
+@app.route("/tempo-real")
+def tempo_real():
+    login_ctl.exigir_login()
+    return ctl.render("tempo_real")
+
+
 # ---------------------------------------------------------
 # Login e logout
 # ---------------------------------------------------------
@@ -67,8 +121,9 @@ def autenticar():
 def logout():
     return login_ctl.logout()
 
+
 # ---------------------------------------------------------
-# CRUD de livros — área administrativa
+# CRUD de livros
 # ---------------------------------------------------------
 
 @app.route("/admin/livros", method="GET")
@@ -112,10 +167,9 @@ def excluir_livro(livro_id):
 # ---------------------------------------------------------
 
 if __name__ == "__main__":
-    run(
-        app,
-        host="0.0.0.0",
-        port=8080,
-        debug=True,
-        reloader=True
+    print("Servidor iniciado em http://localhost:8080")
+
+    eventlet.wsgi.server(
+        eventlet.listen(("0.0.0.0", 8080)),
+        aplicacao_socket
     )

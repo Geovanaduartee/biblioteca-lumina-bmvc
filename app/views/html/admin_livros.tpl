@@ -77,6 +77,12 @@
                         </li>
 
                         <li class="nav-item">
+                            <a class="nav-link" href="/tempo-real">
+                                Avisos em tempo real
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
                             <a class="nav-link" href="/logout">
                                  Sair
                              </a>
